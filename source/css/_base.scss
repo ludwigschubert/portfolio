@@ -1,0 +1,37 @@
+// Base
+
+body {
+  font-weight: 300;
+}
+
+.logo {
+  img {
+    width: 48px;
+    height: 48px;
+  }
+
+}
+
+.wrap {
+  margin-top: 8em;
+}
+
+footer {
+  bottom: 0
+}
+
+a {
+  // color: black;
+
+  &:visited {
+
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+}
