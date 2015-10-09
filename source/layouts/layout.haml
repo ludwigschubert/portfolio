@@ -10,59 +10,36 @@
     = stylesheet_link_tag "main"
 
   %body{class: page_classes}
-    /nav.navbar.navbar-inverse.navbar-static-top role="navigation"
-    /  .container
-    /    .navbar-header
-    /      button.navbar-toggle.collapsed type="button" data-target="#navbar" data-toggle="collapse" aria-controls="navbar" aria-/expanded="false"
-    /        span.sr-only Toggle navigation
-    /        span.icon-bar
-    /        span.icon-bar
-    /        span.icon-bar
-    /      = link_to "Middleman", ".", class: "navbar-brand"
-    /    #navbar.collapse.navbar-collapse
-    /      ul.nav.navbar-nav
-    /        li.active= link_to "Home", "#"
-    /        li= link_to "About", "#about"
-    /        li= link_to "Contact", "#contact"
-
-    /header role="banner"
-    /  .container
-    /    .jumbotron
-    /      h1= current_page.data.title
-    /      p= link_to "Read Online Documentation", "http://middlemanapp.com/"
-
     .wrap
       .container
         .row
           %aside.sidebar.col-sm-2{ role: "complementary" }
             .col-sm-12
-              %a.pull-right
+              = link_to 'http://ludwig.schubert.io', class: 'pull-right' do
                 .logo= image_tag 'logo-slim-black.svg'
                 %p.title Ludwig Schubert
             .col-sm-12
               %nav.filters{ role: "navigation" }
                 %ul
-                  %li.filter
+                  %li.filter.active{ data: { group: 'all' } }
                     = link_to "All", "#all"
-                  %li.filter
+                  %li.filter{ data: { group: 'photography' } }
                     = link_to "Photography", "#photography"
-                  %li.filter
+                  %li.filter{ data: { group: 'development' } }
                     = link_to "Development", "#development"
-                  %li.filter
+                  %li.filter{ data: { group: 'design' } }
                     = link_to "Design", "#design"
             -# .col-sm-12
-            %footer.sidebar-footer{ role: "contentinfo" }
-              = link_to "Information", "#information"
-              -# %small &copy;
-          .col-sm-9.col-sm-offset-2
+          .col-sm-10.col-sm-offset-2
             %main{ role: "main" }
               %section
                 = yield
-
-
-
-      #page-content-wrapper
-
+    %footer.sidebar-footer{ role: "contentinfo" }
+      .container
+        .row
+          .col-sm-2.information
+            = link_to "Information", "#information"
+            -# %small &copy;
 
 
 

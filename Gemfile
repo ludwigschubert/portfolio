@@ -10,6 +10,8 @@ gem 'middleman-deploy', '~> 1.0.0'
 gem 'middleman-imageoptim', '~> 0.2.0'
 # Blogging
 gem "middleman-blog"
+# Galleries
+gem 'middleman-galley'
 
 # Slim template engine
 gem 'slim', '~> 3.0.2'

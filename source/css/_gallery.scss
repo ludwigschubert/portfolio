@@ -1,0 +1,33 @@
+.gallery {
+    // Enables the Scroll Snapping,
+    // saying it is mandatory (hard snap)
+    -webkit-scroll-snap-type: mandatory;
+
+    // Make a Native Smooth Scrolling work: http://blog.gospodarets.com/native_smooth_scrolling/
+    // After that browser starts to scroll blocks
+    // when you use anchors: http://help.typepad.com/anchor-tags.html
+    // It adds smooth scrolling instead of "jumping"
+    // when you press number of a slide to scroll to.
+    -webkit-scroll-behavior: smooth;
+    
+    img {
+      width: auto;
+      height: 341px;
+    }
+    
+    margin-left: 5px;
+    // margin-right: 15em;
+    
+}
+
+.horizontal-gallery {
+    // overflow-x: auto;
+    // overflow-y: visible;
+    white-space: nowrap;
+
+    // Sets the scroll snapping to the each point which is
+    // on the X*GALLERY_WIDTH distance horizontally from start.
+    // Images width are the same as containers.
+    // That's why the scroll snaps to the beginning of the each image.
+    -webkit-scroll-snap-points-x: repeat(100%);
+}

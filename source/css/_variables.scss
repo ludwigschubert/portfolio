@@ -1,16 +1,21 @@
+// Colors
+
+$highlight-color: #C82505;
+
+
 // Variables
 
 // Scaffolding
-$body-bg: #fff;
-$text-color: #333;
-$link-color: #333; //#C82505;
+$body-bg: white;
+$text-color: black;
+$link-color: $highlight-color;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
 
 // Typography
 $font-family-sans-serif: "DIN Next LT Pro", Helvetica, Arial, sans-serif;
 // $font-family-serif: Georgia, "Times New Roman", Times, serif;
-// $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-monospace: "DIN Next LT Pro", "Courier New", Menlo, "Liberation Mono", Consolas, Monaco, monospace;
 $font-family-base: $font-family-sans-serif;
 $font-size-base: 14px;
 $line-height-base: 1.428571429;

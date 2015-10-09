@@ -1,7 +1,29 @@
 // Base
+@import "variables";
 
 body {
   font-weight: 300;
+  line-height: 1.5em;
+}
+
+main {
+  padding-top: 10em;
+  padding-left: 5px;
+
+  h1 {
+    font-weight: 400;
+    font-size: 1em;
+    margin-top: 0.5em;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 1em;
+  }
+}
+
+img {
+  width: 100%;
 }
 
 .logo {
@@ -14,10 +36,23 @@ body {
 
 .wrap {
   margin-top: 8em;
+  margin-bottom: 10em;
 }
 
 footer {
-  bottom: 0
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.850);
+  position: absolute;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  
+  .information {
+    text-align: right;
+    line-height: 6em;
+  }
 }
 
 a {
@@ -34,4 +69,13 @@ a {
   &:focus {
     text-decoration: none;
   }
+}
+
+code {
+  font-size: 1em;
+  padding-top: 3px;
+  font-weight: 300;
+  color: black; //$highlight-color;
+  background-color:rgba(0, 0, 0, 0.04);
+  // letter-spacing: 1px;
 }

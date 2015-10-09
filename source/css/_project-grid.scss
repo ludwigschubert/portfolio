@@ -2,35 +2,59 @@
 
 .projects {
 
-  padding-top: 10em;
+  a {
+    color: black;
+
+    &:visited {
+      // color: black;
+    }
+  }
 
   .project-item {
 
     margin-top: 2em;
 
-    -webkit-transition: opacity 250ms ease-out;
-    opacity: 0.5;
-
-    &:hover {
-      opacity: 1.0;
+    
+    a {
+      -webkit-transition: -webkit-filter 250ms ease-out, opacity 250ms ease-out;
+      -webkit-filter: grayscale(100%);
+      
+      opacity: 0.5;
+      
+      &:hover {
+        opacity: 1.0;
+        -webkit-filter: grayscale(0);
+        .description{
+          opacity: 1.0;
+        }
+      }
     }
 
     img {
-      width: 100%;
-      -webkit-transition: -webkit-filter 250ms ease-out;
+      border: 1px #EEE solid;
 
-      -webkit-filter: grayscale(100%);
-
-      &:hover {
-        -webkit-filter: grayscale(0);
-      }
+      // -webkit-transition: -webkit-filter 250ms ease-out;
+      //
+      // -webkit-filter: grayscale(100%);
+      //
+      // &:hover {
+      //   -webkit-filter: grayscale(0);
+      // }
     }
 
     .description {
       position: relative;
       font-size: $font-size-small;
-      padding: 5px 5px 5px 5px;
-      margin: 0.5em 0.5em 0.5em 0.5em;
+      line-height: 1.3em;
+      padding: 0.75em 1em 1em 1em;
+      margin-top: -5.75em;
+      margin-left: 1px;
+      margin-right: 1px;
+      margin-bottom: 1px;
+      height: 5.75em;
+      background-color: rgba(255, 255, 255, 0.750);
+      opacity: 0;
+      -webkit-transition: opacity 250ms ease-out;
 
       p {
         margin-bottom: 5px;

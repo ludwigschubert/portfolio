@@ -42,12 +42,22 @@
 //
 // /* Sidebar Styles */
 .sidebar {
-    padding-right: 3em;
+
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.850);
     position: absolute;
     position: fixed;
     height: 100%;
 
     text-align: right;
+    
+    a {
+      color: black;
+    
+      &:visited {
+        // color: black;
+      }
+    }
 
     .title {
       font-size: 1.2em;
@@ -55,35 +65,44 @@
       margin-bottom: 0;
     }
 
-    .filters {
-
-      .filter {
-
-        &:nth-of-type(1) {
-          margin-top: 3em;
-        }
-
-        &::after {
-            content: "/";
-            color:#bfbfbf;
-            margin-left: -3px;
-        }
-
-        margin-top: 0.3em;
-        margin-bottom: 0.3em;
-      }
-
-      ul {
-        padding-left: 0;
-        list-style: none;
-      }
-    }
-
-    .sidebar-footer {
-      position: absolute;
-      bottom: 12em;
-    }
 }
+
+.filters {
+
+  // a {
+  //   &:hover {
+  //     color: $link-color;
+  //   }
+  // }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+}
+
+.filter {
+
+  &:nth-of-type(1) {
+    margin-top: 3em;
+  }
+
+  &::after {
+      content: "/";
+      color:#bfbfbf;
+      margin-left: -3px;
+  }
+
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.active {
+  a {
+    color: $highlight-color;
+  }
+}
+      
 //
 // .sidebar-nav {
 //     position: absolute;

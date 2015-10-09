@@ -2,11 +2,13 @@
 title: Ludwig Schubert's portfolio
 ---
 
-.projects
-
-  - 36.times do
-    .project-item.col-md-4.col-sm-6
-      =image_tag "example.jpg"
-      -# .description
-      -#   %p.description-title Lorem Ipsum Dolor Sit
-      -#   %p.description-body I am so sophisticated with my project descriptions using lotsa fancy words!
+#projects.projects
+  - blog.articles.each do |article|
+    - tags = '[' + article.tags.map{|tag| '"' + tag + '"'}.join(', ') + ']'
+    %figure.project-item.col-md-4.col-sm-6{ data: { :groups => tags, :'date-created' => article.date.strftime('%Y-%m-%d') } }
+      = link_to article.url do
+        =image_tag article_thumbnail(article)
+        .description
+          %p.description-title= article.title
+          %p.description-body= article.data['one-liner']
+  .col-xs-1.shuffle-sizer

@@ -53,6 +53,20 @@ set :js_dir, 'js'
 
 set :images_dir, 'img'
 
+# Front-End Javascript
+sprockets.append_path File.join root, '/source/vendor/assets'
+sprockets.import_asset 'jquery'
+sprockets.import_asset 'modernizr/modernizr.js'
+sprockets.import_asset 'shufflejs'
+
+# Blog / Projects
+activate :blog do |blog|
+  blog.sources = "blog/{category}/{year}-{month}-{day}-{title}.html"
+  blog.permalink = "{year}/{month}/{day}/{title}.html"
+end
+
+# Gallery
+# activate :galley
 
 # development configuration
 configure :development do
@@ -68,7 +82,7 @@ configure :build do
   end
 
   # Minify on build
-  
+
   activate :minify_css
   activate :minify_javascript
 
@@ -77,7 +91,7 @@ configure :build do
   # activate :imageoptim
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   activate :relative_assets
@@ -90,7 +104,7 @@ end
 # middleman-deploy configuration
 activate :deploy do |deploy|
   # Automatically run `middleman build` during `middleman deploy`
-  # deploy.build_before = true
+  deploy.build_before = true
 
   # rsync, ftp, sftp, or git
   deploy.method = :git
@@ -103,4 +117,17 @@ activate :deploy do |deploy|
 
   # commit strategy: can be :force_push or :submodule, default: :force_push
   # deploy.strategy = :submodule
+end
+
+helpers do
+  # def article_images article
+  #   directory_name = article.source_file.split('.')[0]
+  #   Dir[]
+  # end
+
+  def article_thumbnail article
+    directory_name = article.source_file.split('.')[0]
+    relative_path = directory_name.split('/').last
+    relative_path + '-thumbnail.jpg'
+  end
 end
