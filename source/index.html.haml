@@ -15,7 +15,7 @@ title: Ludwig Schubert's portfolio
         = link_to "Design", "#design"
 
 
-#projects.projects
+#projects.projects.row
   - blog.articles.each do |article|
     - tags = '[' + article.tags.map{|tag| '"' + tag + '"'}.join(', ') + ']'
     %figure.project-item.col-md-4.col-sm-6{ data: { :groups => tags, :'date-created' => article.date.strftime('%Y-%m-%d') } }

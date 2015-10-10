@@ -13,18 +13,18 @@
     .wrap
       .container
         .row
-          %aside.sidebar.col-sm-2{ role: "complementary" }
-            .col-sm-12
-              = link_to '//:/', class: 'pull-right' do
-                .logo= image_tag 'logo-slim-black.svg'
-                %p.title Ludwig Schubert
-            .col-sm-12
-              - if content_for? :sidebar
-                = yield_content :sidebar
-          .col-sm-10.col-sm-offset-2
-            %main{ role: "main" }
-              %section
-                = yield
+          .col-sm-2.sidebar{ role: "complementary" }
+            .row
+              .col-xs-12
+                = link_to '//:/', class: 'brand' do
+                  .logo= image_tag 'logo-slim-black.svg'
+                  %p.title Ludwig Schubert
+              .col-xs-12
+                - if content_for? :sidebar
+                  = yield_content :sidebar
+          .col-sm-10.col-sm-offset-2.main{ role: "main" }
+            -# %section
+            = yield
     %footer.sidebar-footer{ role: "contentinfo" }
       .container
         .row
