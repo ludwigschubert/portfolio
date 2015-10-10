@@ -19,7 +19,7 @@ title: Ludwig Schubert's portfolio
   - blog.articles.each do |article|
     - tags = '[' + article.tags.map{|tag| '"' + tag + '"'}.join(', ') + ']'
     %figure.project-item.col-md-4.col-sm-6{ data: { :groups => tags, :'date-created' => article.date.strftime('%Y-%m-%d') } }
-      .keep-ratio.two-three
+      .keep-ratio.two-three-responsive
         = link_to article.url do
           =image_tag article_thumbnail(article)
           .description

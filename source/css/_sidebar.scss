@@ -44,7 +44,7 @@
     list-style: none;
     li {
       display: inline-block;  
-      margin-right: 2em;
+      margin-right: 0.5em;
       @media (min-width: $screen-sm-min) { 
         display: block;
         margin-right: 0;
