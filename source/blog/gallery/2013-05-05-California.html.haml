@@ -6,4 +6,4 @@ tags: photography
 
 .gallery.horizontal-gallery
   - (1..25).each do |number|
-    = image_tag "2013-05-05-California/thumbnail-#{number}.jpg"
+    = "<img src=\"California/thumbnail-#{number}.jpg\">".html_safe

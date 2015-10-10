@@ -12,6 +12,8 @@ gem 'middleman-imageoptim', '~> 0.2.0'
 gem "middleman-blog"
 # Galleries
 gem 'middleman-galley'
+# Deployment
+gem 'middleman-s3_sync', github: 'fredjean/middleman-s3_sync'
 
 # Slim template engine
 gem 'slim', '~> 3.0.2'
