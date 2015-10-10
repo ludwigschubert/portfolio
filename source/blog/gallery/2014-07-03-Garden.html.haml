@@ -1,0 +1,9 @@
+---
+title: Parental Garden Delights
+one-liner: There's nothing as calming as a stay in my parents' garden.
+tags: photography
+---
+
+.gallery.horizontal-gallery
+  - (1..6).each do |number|
+    = "<img src=\"Garden/thumbnail-#{number}.jpg\">".html_safe

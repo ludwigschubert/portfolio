@@ -1,7 +1,9 @@
 ---
-title: A title for Denmark
-one-liner: A custom summary for Denmark, which now has to be at least two lines.
+title: Denmark 2014
+one-liner: A late in the year visit to the northernmost part of Denmark, Skagen.
 tags: photography
 ---
 
-Hello World! Denmark!
+.gallery.horizontal-gallery
+  - (1..7).each do |number|
+    = "<img src=\"Denmark/thumbnail-#{number}.jpg\">".html_safe
