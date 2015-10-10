@@ -31,3 +31,23 @@
     // That's why the scroll snaps to the beginning of the each image.
     -webkit-scroll-snap-points-x: repeat(100%);
 }
+
+// Ratio keeping during image loading
+
+.keep-ratio {
+  
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 100%;
+  
+}
+
+.two-three {
+  padding-bottom: 66.67%;
+}
+
+.four-three {
+  padding-bottom: 75%;
+}

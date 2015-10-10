@@ -2,13 +2,27 @@
 title: Ludwig Schubert's portfolio
 ---
 
+- content_for :sidebar do
+  %nav.filters{ role: "navigation" }
+    %ul
+      %li.filter.active{ data: { group: 'all' } }
+        = link_to "All", "#all"
+      %li.filter{ data: { group: 'photography' } }
+        = link_to "Photography", "#photography"
+      %li.filter{ data: { group: 'development' } }
+        = link_to "Development", "#development"
+      %li.filter{ data: { group: 'design' } }
+        = link_to "Design", "#design"
+
+
 #projects.projects
   - blog.articles.each do |article|
     - tags = '[' + article.tags.map{|tag| '"' + tag + '"'}.join(', ') + ']'
     %figure.project-item.col-md-4.col-sm-6{ data: { :groups => tags, :'date-created' => article.date.strftime('%Y-%m-%d') } }
-      = link_to article.url do
-        =image_tag article_thumbnail(article)
-        .description
-          %p.description-title= article.title
-          %p.description-body= article.data['one-liner']
+      .keep-ratio.two-three
+        = link_to article.url do
+          =image_tag article_thumbnail(article)
+          .description
+            %p.description-title= article.title
+            %p.description-body= article.data['one-liner']
   .col-xs-1.shuffle-sizer

@@ -15,21 +15,12 @@
         .row
           %aside.sidebar.col-sm-2{ role: "complementary" }
             .col-sm-12
-              = link_to 'http://ludwig.schubert.io', class: 'pull-right' do
+              = link_to '//:/', class: 'pull-right' do
                 .logo= image_tag 'logo-slim-black.svg'
                 %p.title Ludwig Schubert
             .col-sm-12
-              %nav.filters{ role: "navigation" }
-                %ul
-                  %li.filter.active{ data: { group: 'all' } }
-                    = link_to "All", "#all"
-                  %li.filter{ data: { group: 'photography' } }
-                    = link_to "Photography", "#photography"
-                  %li.filter{ data: { group: 'development' } }
-                    = link_to "Development", "#development"
-                  %li.filter{ data: { group: 'design' } }
-                    = link_to "Design", "#design"
-            -# .col-sm-12
+              - if content_for? :sidebar
+                = yield_content :sidebar
           .col-sm-10.col-sm-offset-2
             %main{ role: "main" }
               %section
