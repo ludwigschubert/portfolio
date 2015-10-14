@@ -52,7 +52,7 @@
   @media (min-width: $screen-sm-min) { 
     padding-bottom: 66.67%;
   }
-  padding-bottom: 90%;
+  padding-bottom: 90%; // bad approximation of how much space the description will need in addition to the 66.7% of the image
 }
 
 .four-three {

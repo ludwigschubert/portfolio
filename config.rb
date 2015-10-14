@@ -65,8 +65,7 @@ activate :blog do |blog|
   blog.permalink = "{year}/{month}/{day}/{title}.html"
 end
 
-# Gallery
-# activate :galley
+# page "/information.html", layout: 'layout'
 
 # development configuration
 configure :development do
@@ -109,7 +108,6 @@ activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'norcal.schubert.io'
   s3_sync.region                     = 'us-west-1'     # The AWS region for your bucket.
   s3_sync.prefer_gzip                = true
-  s3_sync.after_build                = true
   # s3_sync.prefix                     = 'portfolio/'
 end
 

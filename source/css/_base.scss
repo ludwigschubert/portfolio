@@ -1,15 +1,79 @@
 // Base
 @import "variables";
 
+@mixin subdued-links {  
+  a {
+    color: $subdue-color;
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
+
 body {
   font-weight: 300;
   line-height: 1.5em;
+  
+  background-color: black; 
+  
+  -webkit-transition: background-color 250ms ease-out;
+  
+  &.daymode {
+    background-color: white; 
+  }
+  
+  &.nightmode {
+  
+    color: white;
+    background-color: black; 
+    
+    #nightmode {
+      background-image: url("/img/nightmode.png");
+    }
+    
+    .title {
+      color: white;
+    }
+    
+    code {
+      color: white;
+      background-color:rgba(255, 255, 255, 0.2);
+    }
+    
+    .logo {
+      svg {
+        g {
+          path {
+            fill: #FFFFFF !important;
+          }
+          circle {
+            stroke: #FFFFFF !important;
+          }
+        }
+      }
+    }
+    
+    .projects {
+      a{
+        color: #ccc;
+      }
+      .project-item {
+        // color: white;
+        .description {
+          background-color: rgba(0, 0, 0, 0.750)
+        }
+      }
+    }
+  }
+  
 }
 
 .main {
   @media (min-width: $screen-sm-min) { 
-    margin-top: 25em;
+    margin-top: 50px + 50px + 52px;
   }
+  margin-top: 15px;
+  margin-bottom: 8em;
   
   // padding-left: 5px;
 
@@ -29,16 +93,33 @@ img {
   width: 100%;
 }
 
-.brand {
+.outer-container {
+  @media (min-width: $screen-lg-min) { 
+    padding-top: 100px;
+  }
+}
 
+.brand {
+  padding-top: 15px;
   @media (min-width: $screen-sm-min) { 
+    padding-top: 0px;
     float: right !important;
   }
-
 }
 
 .logo {
-  padding-top: 15px;
+  
+  padding: 1px 1px 1px 1px;
+  @media (min-width: $screen-sm-min) { 
+    margin-bottom: 25px; // like paragraph
+  }
+  margin-bottom: 10px;
+  margin-top: 15px;
+  
+  @media (min-width: $screen-md-min) { 
+    margin-top: 35px;
+  }
+  
   img {
     width: 48px;
     height: 48px;
@@ -52,7 +133,9 @@ img {
 
 footer {
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.850);
+  // background-color: rgba(255, 255, 255, 0.850);
+  
+  @include subdued-links;
   
   bottom: 0;
   left: 0;
@@ -62,12 +145,35 @@ footer {
   @media (min-width: $screen-sm-min) { 
     position: fixed;
   }
+  
+  ul {
+    list-style: none;
+    li {
+      display: block;
+    }
+  }
 
+  #nightmode {
+    height: 18px;
+    width: 16px;
+    background-image: url("/img/daymode.png");
+    background-size: contain; 
+    background-position: right;
+    float: right;
+    margin-bottom: 15px;
+    opacity: 0.4375;
+  }
   
   .information {
+    
+    // CSS be crazy with floats.
+    overflow: auto;
+    width: 100%;
+    
     text-align: right;
-    line-height: 6em;
+    padding-bottom: 8em;
   }
+  
 }
 
 a {
@@ -93,4 +199,51 @@ code {
   color: black; //$highlight-color;
   background-color:rgba(0, 0, 0, 0.04);
   // letter-spacing: 1px;
+}
+
+.image-with-annotation {
+
+  margin-left: -15px;
+  margin-right: -15px;
+
+  .image-annotation {
+    padding: 15px 15px 15px 15px;
+    font-size: $font-size-small;
+  }
+
+  @media (min-width: $screen-sm-min) { 
+    
+    margin-left: 0;
+    margin-right: 0;
+  
+    img{
+      width: 50%;
+      padding-right: 15px;
+      display: inline;
+    }
+    
+    .image-annotation {
+      width: 49%;
+      display: inline-block;
+      padding: 0 0 0 0;
+      padding-left: 15px;
+      vertical-align: bottom;
+    }
+  }
+  
+}
+
+blockquote {
+  
+  border-left: 1px solid #ddd;
+  font-size: 1em;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  
+  p {     
+     &:last-of-type {
+      font-size: $font-size-small;
+     }
+   }
 }

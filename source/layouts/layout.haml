@@ -11,15 +11,16 @@
 
   %body{class: page_classes}
     .wrap
-      .container
+      .container.outer-container
         .row
           .col-sm-2.sidebar{ role: "complementary" }
             .row
               .col-xs-12
                 = link_to '//:/', class: 'brand' do
-                  .logo= image_tag 'logo-slim-black.svg'
-                  %p.title Ludwig Schubert
+                  .logo= sprockets.find_asset('logo-slim-black.svg').to_s
               .col-xs-12
+                = link_to '//:/', class: 'brand' do
+                  %p.title Ludwig Schubert
                 - if content_for? :sidebar
                   = yield_content :sidebar
           .col-sm-10.col-sm-offset-2.main{ role: "main" }
@@ -28,12 +29,11 @@
     %footer.sidebar-footer{ role: "contentinfo" }
       .container
         .row
-          .col-sm-2.col-xs-4.information
-            = link_to "Information", "#information"
-            -# %small &copy;
-
-
-
+          .col-sm-2.col-xs-6
+            .information
+              #nightmode 
+              .clear{ style: 'clear: both;' }
+              = link_to 'Information', '/information.html'
 
     /! JavaScript
     = javascript_include_tag "main"

@@ -1,6 +1,7 @@
 // Colors
 
 $highlight-color: #C82505;
+$subdue-color: #777;
 
 
 // Variables
@@ -10,7 +11,7 @@ $body-bg: white;
 $text-color: black;
 $link-color: $highlight-color;
 $link-hover-color: darken($link-color, 15%);
-$link-hover-decoration: underline;
+$link-hover-decoration: none;
 
 // Typography
 $font-family-sans-serif: "DIN Next LT Pro", Helvetica, Arial, sans-serif;

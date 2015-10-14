@@ -2,20 +2,15 @@
 
 .sidebar {
     
-    // background-color: rgba(255, 255, 255, 0.850);
-    
-    a {
-      color: black;
-    
-      &:visited {
-        // color: black;
-      }
-    }
+    @include subdued-links;
 
     .title {
-      font-size: 1.2em;
-      margin-top: 3em;
-      margin-bottom: 0;
+      // font-size: 1.2em;
+      // font-weight: 400;
+      // text-decoration: underline;
+      color: black;
+      // margin-top: 3em;
+      // margin-bottom: 0;
     }
     
     @media (min-width: $screen-sm-min) { 
@@ -24,7 +19,7 @@
       z-index: 100;
       height: 100%;
       text-align: right;
-      margin-top: 15em;
+      // margin-top: 5em;
     }
     
     @media (min-width: $screen-md-min) { 
@@ -55,15 +50,15 @@
 
 .filter {
 
-  &:nth-of-type(1) {
-    margin-top: 3em;
-  }
+  // &:nth-of-type(1) {
+  //   margin-top: 3em;
+  // }
 
-  &::after {
-      content: "/";
-      color:#bfbfbf;
-      margin-left: -3px;
-  }
+  // &::after {
+  //     content: "/";
+  //     color:#ddd;
+  //     margin-left: -3px;
+  // }
 
   margin-top: 0.3em;
   margin-bottom: 0.3em;
@@ -72,5 +67,6 @@
 .active {
   a {
     color: $highlight-color;
+    font-weight: 400;
   }
 }
